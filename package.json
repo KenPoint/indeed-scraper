@@ -1,0 +1,13 @@
+{
+  "name": "indeed-scraper",
+  "version": "1.0.0",
+  "description": "Scrapes job title and description from Indeed",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "playwright": "^1.42.1"
+  }
+}
