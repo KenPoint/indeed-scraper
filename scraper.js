@@ -33,9 +33,13 @@ app.post("/scrape", async (req, res) => {
       description: description.slice(0, 3000),
     });
   } catch (err) {
-    console.error("Scraping error:", err);
-    res.status(500).json({ error: "Failed to scrape job page", details: err.message });
-  } finally {
+  console.error("❌ Scraping error:", err);
+  res.status(500).json({ 
+    error: "Failed to scrape job page", 
+    details: err.message,
+    stack: err.stack 
+  });
+} finally {
     if (browser) await browser.close();
   }
 });
