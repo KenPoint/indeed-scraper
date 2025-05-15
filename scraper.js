@@ -15,7 +15,12 @@ app.post("/scrape", async (req, res) => {
 
   let browser;
   try {
-    browser = await chromium.launch({ headless: true });
+    browser = await chromium.launch({
+  headless: true,
+  proxy: {
+    server: 'http://45.174.76.234:53281'
+  }
+});
     const page = await browser.newPage();
     await page.goto(jobUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
 
