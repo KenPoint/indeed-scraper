@@ -15,10 +15,12 @@ app.post("/scrape", async (req, res) => {
 
   let browser;
   try {
-    browser = await chromium.launch({
+browser = await chromium.launch({
   headless: true,
   proxy: {
-    server: 'http://51.15.242.202:8888'
+    server: 'http://87.98.96.20:50100',
+    username: 'nurken',
+    password: 'ynhLMw9xmI'
   }
 });
     const page = await browser.newPage();
