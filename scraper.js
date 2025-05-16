@@ -18,7 +18,7 @@ app.post("/scrape", async (req, res) => {
     browser = await chromium.launch({
   headless: true,
   proxy: {
-    server: 'http://45.174.76.234:53281'
+    server: 'http://51.15.242.202:8888'
   }
 });
     const page = await browser.newPage();
